@@ -1,0 +1,77 @@
+<div class="lab-result-import-detail">
+  <div class="lab-result-import-header">
+    <%= link_to "← Back to Imports", lab_result_imports_path, class: "back-link" %>
+    <h1><%= @lab_result_import.filename %></h1>
+  </div>
+
+  <% if notice %>
+    <div class="flash-notice"><%= notice %></div>
+  <% end %>
+
+  <% if @lab_result_import.status.in?(%w[pending processing]) %>
+    <meta http-equiv="refresh" content="3">
+  <% end %>
+
+  <div class="import-info">
+    <div class="info-item">
+      <span class="info-label">Status</span>
+      <span class="info-value">
+        <span class="status-badge status-<%= @lab_result_import.status %>"><%= @lab_result_import.status.humanize %></span>
+      </span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Uploaded At</span>
+      <span class="info-value"><%= @lab_result_import.created_at.strftime("%b %d, %Y %H:%M") %></span>
+    </div>
+  </div>
+
+  <% if @lab_result_import.status.in?(%w[pending processing]) %>
+    <div class="processing-note">Processing… this page will refresh automatically.</div>
+  <% end %>
+
+  <% summary = @lab_result_import.summary || {} %>
+  <% if summary.present? %>
+    <div class="summary-section">
+      <h2>Records</h2>
+      <div class="stat-grid">
+        <div class="stat-tile">
+          <span class="stat-label">Patients</span>
+          <span class="stat-value"><%= summary["patients_created"] || summary[:patients_created] || 0 %> created</span>
+          <span class="stat-subvalue"><%= summary["patients_updated"] || summary[:patients_updated] || 0 %> updated</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-label">Assessments</span>
+          <span class="stat-value"><%= summary["assessments_created"] || summary[:assessments_created] || 0 %> created</span>
+          <span class="stat-subvalue"><%= summary["assessments_updated"] || summary[:assessments_updated] || 0 %> updated</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-label">Observations</span>
+          <span class="stat-value"><%= summary["observations_created"] || summary[:observations_created] || 0 %> created</span>
+          <span class="stat-subvalue"><%= summary["observations_updated"] || summary[:observations_updated] || 0 %> updated</span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @lab_result_import.import_errors.present? %>
+    <div class="errors-section">
+      <h2>Errors (<%= @lab_result_import.import_errors.size %>)</h2>
+      <table class="errors-table">
+        <thead>
+          <tr>
+            <th>Line</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @lab_result_import.import_errors.each do |error| %>
+            <tr>
+              <td><%= error["line"] || error[:line] || "—" %></td>
+              <td><%= error["message"] || error[:message] %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+John Doe|1985-03-15|M|REF-2024-003
+2093-3|190|mg/dL
+9999-9|1|unknown
+Jane Smith|1990-07-22|F|REF-2024-004
+8480-6|118|mmHg
+8462-4|abc|mmHg
+Josh Brown|not-a-date|M|REF-2024-005
+8867-4|75|bpm
+8310-5|99.1|°F

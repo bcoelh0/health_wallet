@@ -1,0 +1,35 @@
+<div class="lab-result-imports-container">
+  <div class="header-row">
+    <h1>Lab Result Imports</h1>
+    <%= link_to "Upload File", new_lab_result_import_path, class: "btn btn-primary" %>
+  </div>
+
+  <% if notice %>
+    <div class="flash-notice"><%= notice %></div>
+  <% end %>
+
+  <% if @lab_result_imports.any? %>
+    <table class="imports-table">
+      <thead>
+        <tr>
+          <th>Filename</th>
+          <th>Status</th>
+          <th>Uploaded At</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @lab_result_imports.each do |import| %>
+          <tr>
+            <td><%= import.filename %></td>
+            <td><span class="status-badge status-<%= import.status %>"><%= import.status.humanize %></span></td>
+            <td><%= import.created_at.strftime("%b %d, %Y %H:%M") %></td>
+            <td><%= link_to "View", lab_result_import_path(import), class: "assessment-link" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="no-imports">No lab result imports yet.</div>
+  <% end %>
+</div>
