@@ -10,6 +10,7 @@ class LabResultImport
   # Named `import_errors`, not `errors` — Mongoid raises Mongoid::Errors::InvalidField
   # for `errors` since ActiveModel::Validations already defines that method.
   field :import_errors, type: Array, default: []
+  field :summary, type: Hash, default: {}
 
   validates :content, presence: true
 end

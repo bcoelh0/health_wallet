@@ -1,0 +1,170 @@
+/* Lab Result Imports */
+.lab-result-imports-container,
+.lab-result-import-form-container,
+.lab-result-import-detail {
+  max-width: var(--container-max-width);
+  margin: var(--spacing-2xl) auto;
+  padding: 0 20px;
+  font-family: var(--font-family);
+}
+
+.lab-result-imports-container h1,
+.lab-result-import-detail h1 {
+  color: var(--color-text-primary);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.lab-result-import-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.imports-table,
+.errors-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.imports-table thead,
+.errors-table thead {
+  background: var(--color-header-bg);
+}
+
+.imports-table th,
+.errors-table th {
+  color: var(--color-white);
+  font-weight: 500;
+  text-align: left;
+  padding: 14px var(--spacing-md);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.imports-table td,
+.errors-table td {
+  padding: 14px var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.imports-table tbody tr:last-child td,
+.errors-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.no-imports {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-text-light);
+  font-size: 16px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pending { background: #fff3cd; color: #856404; }
+.status-processing { background: #cce5ff; color: #004085; }
+.status-completed { background: #d4edda; color: #155724; }
+.status-completed_with_errors { background: #ffe8cc; color: #8a4b00; }
+.status-failed { background: #f8d7da; color: #721c24; }
+
+.import-info {
+  display: flex;
+  gap: var(--spacing-xl);
+  background: var(--color-white);
+  padding: 20px var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.processing-note {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Summary stat grid */
+.summary-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.summary-section h2,
+.errors-section h2 {
+  color: var(--color-text-primary);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.stat-tile {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.stat-subvalue {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* Form group (file upload) */
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Error flash (new — no equivalent exists elsewhere in app) */
+.flash-alert {
+  background: #f8d7da;
+  color: #721c24;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-lg);
+  font-size: 14px;
+}
+
+.flash-alert ul {
+  margin: 0;
+  padding-left: var(--spacing-lg);
+}

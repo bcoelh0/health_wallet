@@ -12,6 +12,10 @@ class LabResultImportJobTest < ActiveSupport::TestCase
     assert_empty import.import_errors
     assert_equal 1, Patient.count
     assert_equal 1, Assessment.count
+    assert_equal 1, import.summary["patients_created"]
+    assert_equal 0, import.summary["patients_updated"]
+    assert_equal 1, import.summary["assessments_created"]
+    assert_operator import.summary["observations_created"], :>, 0
   end
 
   test "a partially valid file completes with errors" do
@@ -23,6 +27,7 @@ class LabResultImportJobTest < ActiveSupport::TestCase
     assert_equal "completed_with_errors", import.status
     assert import.import_errors.present?
     assert Patient.count.positive?
+    assert_equal Patient.count, import.summary["patients_created"]
   end
 
   test "a file with no parseable content fails with zero patients persisted" do
