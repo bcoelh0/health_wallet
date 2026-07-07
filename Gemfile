@@ -64,7 +64,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   # Pin minitest to 5.x due to Rails 8 compatibility issues with minitest 6.x
-  gem "minitest", "~> 5.25"
+  gem "minitest", "~> 6.0"
 end
 
 gem "mongoid"

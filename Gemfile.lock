@@ -173,7 +173,9 @@ GEM
     mini_magick (5.3.1)
       logger
     mini_mime (1.1.5)
-    minitest (5.27.0)
+    minitest (6.0.6)
+      drb (~> 2.0)
+      prism (~> 1.5)
     mongo (2.22.0)
       base64
       bson (>= 4.14.1, < 6.0.0)
@@ -405,7 +407,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
-  minitest (~> 5.25)
+  minitest (~> 6.0)
   mongoid
   propshaft
   puma (>= 5.0)
@@ -484,7 +486,7 @@ CHECKSUMS
   matrix (0.4.3) sha256=a0d5ab7ddcc1973ff690ab361b67f359acbb16958d1dc072b8b956a286564c5b
   mini_magick (5.3.1) sha256=29395dfd76badcabb6403ee5aff6f681e867074f8f28ce08d78661e9e4a351c4
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
-  minitest (5.27.0) sha256=2d3b17f8a36fe7801c1adcffdbc38233b938eb0b4966e97a6739055a45fa77d5
+  minitest (6.0.6) sha256=153ea36d1d987a62942382b61075745042a2b3123b1cd48f4c3675af9cc7d6f1
   mongo (2.22.0) sha256=8eff6211f3bb29b7461e4ff6f35d1422f3966fa072c5423888b5271b8c09b6bb
   mongoid (9.0.10) sha256=351192e70027276748f3c946b8926fad9254356e36021dacb5cec08d0740f21d
   msgpack (1.8.0) sha256=e64ce0212000d016809f5048b48eb3a65ffb169db22238fb4b72472fecb2d732
